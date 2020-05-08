@@ -91,8 +91,10 @@ time.sleep(2)
 str_n_seguidores = driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/header/section/ul/li[2]/a/span').text
 str_n_seguindo = driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/header/section/ul/li[3]/a/span').text
 
-n_seguidores = int(str_n_seguidores.replace('.',''))
-n_seguindo = int(str_n_seguindo.replace('.',''))
+
+n_seguidores = int(str_n_seguidores.replace('.','')) #em caso de menos de 1000 seguidores use: n_seguidores = int(str_n_seguidores)
+
+n_seguindo = int(str_n_seguindo.replace('.','')) #em caso de menos de 1000 seguindo use: n_seguindo = int(str_n_seguindo)
 
 driver.find_element_by_xpath(seguidores).click() #abrir janela de seguidores
 
